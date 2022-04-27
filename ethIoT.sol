@@ -1,4 +1,12 @@
-contract lightSensor {
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.0 <0.9.0;
+
+// This is a simple example of a coin-like contract.
+// It is not standards compatible and cannot be expected to talk to other
+// coin/token contracts. If you want to create a standards-compliant
+// token, see: https://github.com/ConsenSys/Tokens. Cheers!
+
+contract LightSensor {
   bool LEDturnedOn;
   bool currentState;
   address owner;
@@ -9,17 +17,18 @@ contract lightSensor {
   }
 
   // Constructor
-  function isLightTurnedOn() public constant returns(bool){
+  function isLightTurnedOn() public view returns(bool){
     return LEDturnedOn;
   }
 
-  function turnLightOn() public payable{
-    if(msg.value < 1000 ){revert();}
+  function turnLightOn() external returns (bool){
+    require(LEDturnedOn == false, "Light is ON!");
     LEDturnedOn = true;
+    return LEDturnedOn;
   }
-  function turnLigthOff() public payable{
+  function turnLigthOff() external returns (bool){
+    require(LEDturnedOn == true, "Light is OFF!");
     LEDturnedOn = false;
+    return LEDturnedOn;
   }
-
 }
-
