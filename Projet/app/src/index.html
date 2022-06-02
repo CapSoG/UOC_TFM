@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bombilla Conectada a la red ETH</title>
+  </head>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+  </style>
+  <body>
+    <h1>LED Dapp</h1>
+    <p>La dirección actual en  Ropsten es: <strong class="account">loading...</strong></p>
+    
+    
+
+    <h2>Última transacción mandada a la Blockchain — LED Dapp</h2>
+    <p id="txStr"></p>
+    <button id=but8 onclick="App.refreshTransaction()">Get Transaction</button>
+    
+	    <form class="form-inline">
+		    <label for="acceptClaim">Encender la bombilla:</label>
+	  	    <button id=button-exclaim onclick="App.turnLightOn()">Click!</button>
+	    </form>
+	    <form class="form-inline">
+		  <label for="acceptClaim">Apagar la bombilla:</label>
+	  	    <button id=button-exclaim onclick="App.turnLightOff()">Click!</button>
+	    </form>
+
+    <p>El estado de la bombilla es: <strong class="lightStatus">loading...</strong></p>
+    <p>
+    <p id="status"></p>
+      <strong>Hint:</strong> open the browser developer console to view any
+      errors and warnings.
+    </p>
+    <script src="index.js"></script>
+  </body>
+</html>
