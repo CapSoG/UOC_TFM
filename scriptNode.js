@@ -1,0 +1,5 @@
+const { ClientBuilder } = require('@iota/client')
+const client = new ClientBuilder()
+    .node('https://chrysalis-nodes.iota.org')
+    .build()
+client.getInfo().then(console.log).catch(console.error)
