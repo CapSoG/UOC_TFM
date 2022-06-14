@@ -12,11 +12,11 @@ async function run() {
 
    // Recuperamos los datos del mensaje
 
-    const message_data = await client.getMessage().data("2c7df1532155fed1a862b9f246a148cc0e7b3adbf815d27fb96240d7edd73519");
+    const message_data = await client.getMessage().data("1130dc8304020253b66c70efd1f64aa17e7df866b3de457cd185525313d7681f");
     console.log(message_data);
     
     // Recuperamos los datos del mensaje sin procesar para que podamos analizar el numero de bytes
-    const message_raw = await client.getMessage().raw("2c7df1532155fed1a862b9f246a148cc0e7b3adbf815d27fb96240d7edd73519");
+    const message_raw = await client.getMessage().raw("1130dc8304020253b66c70efd1f64aa17e7df866b3de457cd185525313d7681f");
     console.log(message_raw);
 }
 
